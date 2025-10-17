@@ -59,6 +59,10 @@ if (process.env.NODE_ENV_CUSTOM === "production") {
     res.send("Welcome to travel and tourism app");
   });
 }
+app.use((req, res, next) => {
+  res.status(404).json({ success: false, message: "API endpoint not found" });
+});
+
 
 // Start server
 const PORT = process.env.PORT || 8000;
