@@ -8,7 +8,6 @@ import bookingRoute from "./routes/booking.route.js";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import path from "path";
-import cors from "cors";
 const app = express();
 dotenv.config();
 
@@ -21,11 +20,7 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-app.use(
-  cors({
-    origin: process.env.SERVER_URL,
-  })
-);
+
 app.use(express.json());
 app.use(cookieParser());
 
